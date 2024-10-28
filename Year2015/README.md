@@ -6,6 +6,6 @@
 
 ## :trophy: 2/50
 
-| Day |                            Title                             |      Status       | Difficulty |            Solution            |               Input                |   Tags   | 
-|:---:|:------------------------------------------------------------:|:-----------------:|:----------:|:------------------------------:|:----------------------------------:|:--------:|
-|  1  | [Day 1: Not Quite Lisp](https://adventofcode.com/2015/day/1) | :1st_place_medal: |   :star:   | [Day01.fs](/Year2015/Day01.fs) | [2015_01.txt](/Inputs/2015_01.txt) | sequence |
+| Day |                            Title                             |      Status       | Difficulty |            Solution            |   Tags   | 
+|:---:|:------------------------------------------------------------:|:-----------------:|:----------:|:------------------------------:|:--------:|
+|  1  | [Day 1: Not Quite Lisp](https://adventofcode.com/2015/day/1) | :1st_place_medal: |   :star:   | [Day01.fs](/Year2015/Day01.fs) | sequence |
