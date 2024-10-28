@@ -1,4 +1,9 @@
-﻿module Year2015.Day01
+﻿/// Year 2015/1 - Not Quite Lisp
+/// Link: https://adventofcode.com/2015/day/1
+/// Difficulty: xs
+/// Tags: sequence
+/// Solution: (232, 1783)
+module Year2015.Day01
 
 open Common.Helpers
 open Common.Types
