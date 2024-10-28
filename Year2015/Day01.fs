@@ -1,4 +1,4 @@
-﻿module Year2015.Day1501
+﻿module Year2015.Day01
 
 open Common.Helpers
 open Common.Types

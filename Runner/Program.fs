@@ -3,7 +3,7 @@ open Utils
 open Common.Types
 
 let isValid year day =
-    year >= 2015 && year <= 2023 && day >= 1 && day <= 25
+    year >= 2015 && year <= 2024 && day >= 1 && day <= 25
 
 let solutionFor year day =
     match readLines year day with
@@ -18,6 +18,7 @@ let solutionFor year day =
         | 2021 -> Year2021.Solver.solveFor input day
         | 2022 -> Year2022.Solver.solveFor input day
         | 2023 -> Year2023.Solver.solveFor input day
+        | 2024 -> Year2024.Solver.solveFor input day
         | _ -> Error(NotDoneYet)
     | None -> Error(FileNotFound)
 
@@ -28,7 +29,7 @@ let main argv =
         if argv.Length = 2 then
             (int argv[0], int argv[1])
         else
-            (2016, 1)
+            (2024, 1)
 
     let result =
         if isValid year day then
