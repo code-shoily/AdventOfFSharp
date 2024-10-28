@@ -10,22 +10,25 @@ let solutionFor year day =
     | Some input ->
         match year with
         | 2015 -> Year2015.Solver.solveFor input day
-        | 2016 -> Error(NotDoneYet)
-        | 2017 -> Error(NotDoneYet)
-        | 2018 -> Error(NotDoneYet)
-        | 2019 -> Error(NotDoneYet)
-        | 2020 -> Error(NotDoneYet)
-        | 2021 -> Error(NotDoneYet)
-        | 2022 -> Error(NotDoneYet)
-        | 2023 -> Error(NotDoneYet)
+        | 2016 -> Year2016.Solver.solveFor input day
+        | 2017 -> Year2017.Solver.solveFor input day
+        | 2018 -> Year2018.Solver.solveFor input day
+        | 2019 -> Year2019.Solver.solveFor input day
+        | 2020 -> Year2020.Solver.solveFor input day
+        | 2021 -> Year2021.Solver.solveFor input day
+        | 2022 -> Year2022.Solver.solveFor input day
+        | 2023 -> Year2023.Solver.solveFor input day
         | _ -> Error(NotDoneYet)
     | None -> Error(FileNotFound)
 
 
 [<EntryPoint>]
 let main argv =
-    let year = int argv[0]
-    let day = int argv[1]
+    let year, day =
+        if argv.Length = 2 then
+            (int argv[0], int argv[1])
+        else
+            (2016, 1)
 
     let result =
         if isValid year day then
@@ -34,4 +37,5 @@ let main argv =
             Error(InvalidInput)
 
     printfn $"%A{result}"
+
     0
