@@ -11,6 +11,15 @@
     <ItemGroup>
         <Compile Include="Helpers.fs" />
         <Compile Include="Year2015Tests.fs" />
+        <Compile Include="Year2016Tests.fs" />
+        <Compile Include="Year2017Tests.fs" />
+        <Compile Include="Year2018Tests.fs" />
+        <Compile Include="Year2019Tests.fs" />
+        <Compile Include="Year2020Tests.fs" />
+        <Compile Include="Year2021Tests.fs" />
+        <Compile Include="Year2022Tests.fs" />
+        <Compile Include="Year2023Tests.fs" />
+        <Compile Include="Year2024Tests.fs" />
         <Compile Include="Program.fs"/>
     </ItemGroup>
 
