@@ -32,7 +32,6 @@
         <Compile Include="Day24.fs" />
         <Compile Include="Day25.fs" />
         <Compile Include="Library.fs"/>
-        <Content Include="README.md" />
     </ItemGroup>
 
     <ItemGroup>
