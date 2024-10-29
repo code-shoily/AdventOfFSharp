@@ -2,7 +2,7 @@
 /// Link: https://adventofcode.com/2015/day/1
 /// Difficulty: xs
 /// Tags: sequence
-/// Solution: (232, 1783)
+/// Remarks:
 module Year2015.Day01
 
 open Common.Helpers

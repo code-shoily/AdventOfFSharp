@@ -2,7 +2,7 @@
 /// Link: https://adventofcode.com/2020/day/23
 /// Difficulty: 
 /// Tags: 
-/// Solution: ???
+/// Remarks:
 module Year2020.Day23
            
 open Common.Types

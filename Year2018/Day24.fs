@@ -2,7 +2,7 @@
 /// Link: https://adventofcode.com/2018/day/24
 /// Difficulty: 
 /// Tags: 
-/// Solution: ???
+/// Remarks:
 module Year2018.Day24
            
 open Common.Types

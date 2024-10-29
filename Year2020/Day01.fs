@@ -4,7 +4,6 @@
 /// Tags: n-sum
 module Year2020.Day01
 
-open Common.Helpers
 open Common.Types
 
 let twoSum (target: int) (nums: int array) =
