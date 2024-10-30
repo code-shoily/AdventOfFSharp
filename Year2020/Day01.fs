@@ -4,6 +4,7 @@
 /// Tags: n-sum
 module Year2020.Day01
 
+open Common.Helpers
 open Common.Types
 
 let twoSum (target: int) (nums: int array) =
@@ -31,7 +32,7 @@ let solvePart2 =
 
     doThreeSum 2020
 
-let parse = Seq.map int >> Seq.sort >> Seq.toArray
+let parse = ints >> Seq.sort >> Seq.toArray
 
 let solve (rawInput: string seq) =
     let input = parse rawInput

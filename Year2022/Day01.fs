@@ -9,10 +9,7 @@ open Common.Helpers
 open Common.Types
 
 let parse =
-    Seq.toList
-    >> paragraphs
-    >> List.map (List.map int >> List.sum)
-    >> List.sortDescending
+    Seq.toList >> paragraphs >> List.map (ints >> Seq.sum) >> List.sortDescending
 
 let solvePart1 = List.head
 let solvePart2 = List.take (3) >> List.sum

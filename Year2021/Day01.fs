@@ -5,6 +5,7 @@
 /// Remarks:
 module Year2021.Day01
 
+open Common.Helpers
 open Common.Types
 
 let measurementWindow size =
@@ -16,6 +17,6 @@ let solvePart1 = measurementWindow 2
 let solvePart2 = measurementWindow 4
 
 let solve (rawInput: string seq) =
-    let input = rawInput |> Seq.map (string >> int)
+    let input = ints rawInput
 
     BothInt(solvePart1 input, solvePart2 input)

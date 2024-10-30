@@ -5,6 +5,7 @@
 /// Remarks: -
 module Year2017.Day01
 
+open Common.Helpers
 open Common.Types
 
 let solvePart1 =
@@ -23,5 +24,5 @@ let solvePart2 =
     >> Seq.sum
 
 let solve (rawInput: string seq) =
-    let input = rawInput |> Seq.head |> Seq.map (string >> int) |> Array.ofSeq
+    let input = rawInput |> Seq.head |> ints |> Array.ofSeq
     BothInt(solvePart1 input, solvePart2 input)

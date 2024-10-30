@@ -5,6 +5,7 @@
 /// Remarks:
 module Year2019.Day01
 
+open Common.Helpers
 open Common.Types
 
 let fuelForMass mass = mass / 3 - 2
@@ -22,5 +23,5 @@ let solvePart1 = fuelCalculator fuelForMass
 let solvePart2 = fuelCalculator fuelForModule
 
 let rec solve (rawInput: string seq) =
-    let input = Seq.map (string >> int) rawInput
+    let input = rawInput |> ints
     BothInt(solvePart1 input, solvePart2 input)

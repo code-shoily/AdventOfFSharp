@@ -5,13 +5,8 @@
 /// Remarks: -
 module Year2018.Day01
 
+open Common.Helpers
 open Common.Types
-
-let rec cycle sequence =
-    seq {
-        yield! sequence
-        yield! cycle sequence
-    }
 
 let solvePart1: int seq -> int = Seq.sum
 
@@ -30,5 +25,5 @@ let solvePart2: int seq -> int =
     >> Seq.pick id
 
 let solve (rawInput: string seq) =
-    let input = rawInput |> Seq.map int
+    let input = rawInput |> ints
     BothInt(solvePart1 input, solvePart2 input)

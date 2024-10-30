@@ -2,6 +2,7 @@
 /// Link: https://adventofcode.com/2016/day/1
 /// Difficulty: s
 /// Tags: navigation
+/// Remarks: -
 module Year2016.Day01
 
 open Common.Helpers
@@ -61,7 +62,7 @@ let solvePart1: string seq -> int =
             | South(x, y) -> West(x - steps, y)
             | East(x, y) -> South(x, y - steps)
 
-    parse >> Seq.fold (move) (North(0, 0)) >> manhattanDistance
+    parse >> Seq.fold move (North(0, 0)) >> manhattanDistance
 
 let solvePart2: string seq -> int =
     let move facing =
