@@ -5,6 +5,20 @@ module Helpers =
     let todo () = failwith "todo"
 
     /// <summary>
+    /// Repeats a sequence forever
+    /// </summary>
+    /// <param name="sequence">The sequence we are cycling through</param>
+    let rec cycle sequence =
+        seq {
+            yield! sequence
+            yield! cycle sequence
+        }
+
+    /// <summary>
+    /// Converts a sequence of string into a list of numbers
+    /// </summary>
+    let ints ls = ls |> Seq.map (string >> int)
+    /// <summary>
     /// Returns the single line
     /// </summary>
     let oneLiner = Seq.exactlyOne
