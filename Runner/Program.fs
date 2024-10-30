@@ -1,5 +1,5 @@
 ﻿open AdventOfCode.FSharp
-open Utils
+open IOUtils
 open Common.Types
 
 let isValid year day =

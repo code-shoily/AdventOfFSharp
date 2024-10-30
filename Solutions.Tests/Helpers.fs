@@ -1,7 +1,7 @@
 ﻿module Solutions.Tests.Helpers
 
 open AdventOfCode.FSharp
-open Utils
+open IOUtils
 
 let getInput year day =
     match readLines year day with
