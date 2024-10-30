@@ -3,7 +3,12 @@
 module Helpers =
     let unreachable () = failwith "unreachable"
     let todo () = failwith "todo"
-    
+
+    /// <summary>
+    /// Returns the single line
+    /// </summary>
+    let oneLiner = Seq.exactlyOne
+
     /// <summary>
     /// Collects paragraphs (i.e. groups data separated by "" or "\n\n" in String form)
     /// </summary>
