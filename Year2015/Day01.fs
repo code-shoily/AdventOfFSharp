@@ -9,14 +9,14 @@ open Common.Helpers
 open Common.Types
 
 let parse =
-    Seq.head
+    oneLiner
     >> Seq.map (function
         | '(' -> 1
-        | ')' -> -1
-        | _ -> unreachable ())
+        | _ -> -1)
 
 let solvePart1 = Seq.sum
 let solvePart2 = Seq.scan (+) 0 >> Seq.findIndex ((=) -1)
 
-let solve: string seq -> Solution =
-    parse >> (fun x -> (solvePart1 x, solvePart2 x)) >> BothInt
+let solve (rawInput: string seq) =
+    let input = parse rawInput
+    BothInt(solvePart1 input, solvePart2 input)
