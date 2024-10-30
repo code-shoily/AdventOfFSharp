@@ -31,7 +31,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Utils\Utils.fsproj" />
+      <ProjectReference Include="..\IOUtils\IOUtils.fsproj" />
       <ProjectReference Include="..\Year2015\Year2015.fsproj" />
       <ProjectReference Include="..\Year2016\Year2016.fsproj" />
       <ProjectReference Include="..\Year2017\Year2017.fsproj" />
