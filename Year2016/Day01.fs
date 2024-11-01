@@ -42,7 +42,7 @@ let parse (input: string seq) =
         | _ -> unreachable ()
 
     input
-    |> Seq.head
+    |> Seq.exactlyOne
     |> (fun (input: string) -> input.Split(", "))
     |> Seq.map asInstruction
 
