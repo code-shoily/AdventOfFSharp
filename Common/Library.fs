@@ -3,7 +3,7 @@
 module Types =
     type Solution =
         | BothInt of int * int
-        | StringInt of string * int
+        | IntString of int * string
         | Todo
 
     type SolutionError =
