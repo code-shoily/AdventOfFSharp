@@ -1,7 +1,7 @@
-/// Year 2020/2 - ???
+/// Year 2020/2 - Password Philosophy
 /// Link: https://adventofcode.com/2020/day/2
-/// Difficulty:
-/// Tags:
+/// Difficulty: xs
+/// Tags: string
 /// Remarks:
 module Year2020.Day02
 
