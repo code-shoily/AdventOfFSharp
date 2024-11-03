@@ -1,8 +1,8 @@
-/// Year 2022/2 - ???
+/// Year 2022/2 - Rock Paper Scissors
 /// Link: https://adventofcode.com/2022/day/2
-/// Difficulty:
-/// Tags:
-/// Remarks:
+/// Difficulty: xs
+/// Tags: tabular typed
+/// Remarks: Refactor more
 module Year2022.Day02
 
 open Common.Helpers
