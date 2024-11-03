@@ -5,4 +5,6 @@ open Common.Types
 module Solver =
     let solveFor input day =
         match day with
-        | _ -> Error(NotDoneYet)
+        | 1 -> Day01.solve input |> Ok
+        | 2 -> Day02.solve input |> Ok
+        | _ -> NotDoneYet |> Error
