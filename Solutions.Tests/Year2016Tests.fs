@@ -8,11 +8,20 @@ module TestYear2016Solutions =
 
     let getInput = Helpers.getInput 2016
 
-    (* [<Fact>]
+    [<Fact>]
     let ``Solves Day 1`` () =
         let day = 1
-        let expected = BothInt(232, 1783)
+        let expected = BothInt(253, 126)
 
-        let actual = Year2015.Day01.solve (getInput day)
+        let actual = Year2016.Day01.solve (getInput day)
 
-        Assert.Equal(expected, actual) *)
+        Assert.Equal(expected, actual)
+
+    [<Fact>]
+    let ``Solves Day 2`` () =
+        let day = 2
+        let expected = BothString("76792", "A7AC3")
+
+        let actual = Year2016.Day02.solve (getInput day)
+
+        Assert.Equal(expected, actual)
