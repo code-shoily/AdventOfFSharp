@@ -6,7 +6,8 @@ open AdventOfCode.FSharp.IOUtils
 
 let getInput year day = readLines year day |> Option.get
 
-let rawInput = getInput 2023 2
+let rawInput = getInput 2016 3
 
 (* Copy Pasta *)
 (* Experiments go here *)
+// rawInput |> solve
