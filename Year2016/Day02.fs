@@ -1,7 +1,7 @@
-/// Year 2016/2 - ???
+/// Year 2016/2 - Bathroom Security
 /// Link: https://adventofcode.com/2016/day/2
-/// Difficulty:
-/// Tags:
+/// Difficulty: xs
+/// Tags: navigation
 /// Remarks:
 module Year2016.Day02
 
