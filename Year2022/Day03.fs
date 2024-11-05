@@ -10,8 +10,8 @@ open Common.Types
 
 let getPriority =
     function
-    | c when 'a' <= c && c <= 'z' -> (int c % 97) + 1
-    | c when 'A' <= c && c <= 'Z' -> (int c % 65) + 27
+    | c when 'a' <= c && c <= 'z' -> (int c % int 'a') + 1
+    | c when 'A' <= c && c <= 'Z' -> (int c % int 'A') + 27
     | _ -> unreachable ()
 
 let commonItem = Seq.reduce Set.intersect >> Seq.head
