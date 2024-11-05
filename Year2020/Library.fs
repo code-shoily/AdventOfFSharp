@@ -7,4 +7,5 @@ module Solver =
         match day with
         | 1 -> input |> Day01.solve |> Ok
         | 2 -> input |> Day02.solve |> Ok
+        | 3 -> input |> Day03.solve |> Ok
         | _ -> NotDoneYet |> Error
