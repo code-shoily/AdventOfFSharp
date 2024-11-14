@@ -1,10 +1,10 @@
 /// Year 2020/15 - ???
 /// Link: https://adventofcode.com/2020/day/15
-/// Difficulty: 
-/// Tags: 
+/// Difficulty:
+/// Tags:
 /// Remarks:
 module Year2020.Day15
-           
+
 open Common.Types
-           
+
 let solve (_: string seq) = Todo

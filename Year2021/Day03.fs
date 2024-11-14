@@ -2,7 +2,7 @@
 /// Link: https://adventofcode.com/2021/day/3
 /// Difficulty: xs
 /// Tags: reduction
-/// Remarks: 
+/// Remarks:
 module Year2021.Day03
 
 open System

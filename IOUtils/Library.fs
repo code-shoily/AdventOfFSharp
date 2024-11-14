@@ -1,6 +1,5 @@
 ﻿module AdventOfCode.FSharp.IOUtils
 
-open System
 open System.IO
 
 let getFilePath year day = $"Inputs/%d{year}_%02d{day}.txt"

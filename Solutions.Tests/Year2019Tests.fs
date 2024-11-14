@@ -29,7 +29,7 @@ module TestYear2019Solutions =
     [<Fact>]
     let ``Solves Day 3`` () =
         let day = 3
-        let expected = BothInt (1195, 91518)
+        let expected = BothInt(1195, 91518)
 
         let actual = Year2019.Day03.solve (getInput day)
 

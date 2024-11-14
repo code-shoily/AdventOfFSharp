@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net9.0</TargetFramework>
 
         <IsPackable>false</IsPackable>
         <GenerateProgramFile>false</GenerateProgramFile>
@@ -9,17 +9,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Helpers.fs" />
-        <Compile Include="Year2015Tests.fs" />
-        <Compile Include="Year2016Tests.fs" />
-        <Compile Include="Year2017Tests.fs" />
-        <Compile Include="Year2018Tests.fs" />
-        <Compile Include="Year2019Tests.fs" />
-        <Compile Include="Year2020Tests.fs" />
-        <Compile Include="Year2021Tests.fs" />
-        <Compile Include="Year2022Tests.fs" />
-        <Compile Include="Year2023Tests.fs" />
-        <Compile Include="Year2024Tests.fs" />
+        <Compile Include="Helpers.fs"/>
+        <Compile Include="Year2015Tests.fs"/>
+        <Compile Include="Year2016Tests.fs"/>
+        <Compile Include="Year2017Tests.fs"/>
+        <Compile Include="Year2018Tests.fs"/>
+        <Compile Include="Year2019Tests.fs"/>
+        <Compile Include="Year2020Tests.fs"/>
+        <Compile Include="Year2021Tests.fs"/>
+        <Compile Include="Year2022Tests.fs"/>
+        <Compile Include="Year2023Tests.fs"/>
+        <Compile Include="Year2024Tests.fs"/>
         <Compile Include="Program.fs"/>
     </ItemGroup>
 
@@ -31,17 +31,17 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\IOUtils\IOUtils.fsproj" />
-      <ProjectReference Include="..\Year2015\Year2015.fsproj" />
-      <ProjectReference Include="..\Year2016\Year2016.fsproj" />
-      <ProjectReference Include="..\Year2017\Year2017.fsproj" />
-      <ProjectReference Include="..\Year2018\Year2018.fsproj" />
-      <ProjectReference Include="..\Year2019\Year2019.fsproj" />
-      <ProjectReference Include="..\Year2020\Year2020.fsproj" />
-      <ProjectReference Include="..\Year2021\Year2021.fsproj" />
-      <ProjectReference Include="..\Year2022\Year2022.fsproj" />
-      <ProjectReference Include="..\Year2023\Year2023.fsproj" />
-      <ProjectReference Include="..\Year2024\Year2024.fsproj" />
+        <ProjectReference Include="..\IOUtils\IOUtils.fsproj"/>
+        <ProjectReference Include="..\Year2015\Year2015.fsproj"/>
+        <ProjectReference Include="..\Year2016\Year2016.fsproj"/>
+        <ProjectReference Include="..\Year2017\Year2017.fsproj"/>
+        <ProjectReference Include="..\Year2018\Year2018.fsproj"/>
+        <ProjectReference Include="..\Year2019\Year2019.fsproj"/>
+        <ProjectReference Include="..\Year2020\Year2020.fsproj"/>
+        <ProjectReference Include="..\Year2021\Year2021.fsproj"/>
+        <ProjectReference Include="..\Year2022\Year2022.fsproj"/>
+        <ProjectReference Include="..\Year2023\Year2023.fsproj"/>
+        <ProjectReference Include="..\Year2024\Year2024.fsproj"/>
     </ItemGroup>
 
 </Project>

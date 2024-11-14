@@ -2,7 +2,7 @@
 /// Link: https://adventofcode.com/2023/day/2
 /// Difficulty: s
 /// Tags: reduction
-/// Remarks: 
+/// Remarks:
 module Year2023.Day02
 
 open Common.Helpers

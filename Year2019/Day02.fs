@@ -2,7 +2,7 @@
 /// Link: https://adventofcode.com/2019/day/2
 /// Difficulty: s
 /// Tags: array simulation
-/// Remarks: 
+/// Remarks:
 module Year2019.Day02
 
 open Common.Helpers
