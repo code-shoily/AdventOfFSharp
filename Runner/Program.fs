@@ -1,5 +1,4 @@
-﻿open AdventOfCode.FSharp
-open IOUtils
+﻿open IOUtils
 open Common.Types
 
 let isValid year day =
@@ -29,7 +28,7 @@ let main argv =
         if argv.Length = 2 then
             (int argv[0], int argv[1])
         else
-            (2019, 3)
+            (2018, 3)
 
     let result =
         if isValid year day then

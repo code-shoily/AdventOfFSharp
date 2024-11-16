@@ -1,4 +1,4 @@
-﻿module AdventOfCode.FSharp.IOUtils
+﻿module IOUtils
 
 open System.IO
 

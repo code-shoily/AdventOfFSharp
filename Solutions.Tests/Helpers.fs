@@ -1,6 +1,5 @@
 ﻿module Solutions.Tests.Helpers
 
-open AdventOfCode.FSharp
 open IOUtils
 
 let getInput year day =
