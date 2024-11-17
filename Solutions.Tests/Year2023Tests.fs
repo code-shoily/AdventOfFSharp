@@ -25,3 +25,12 @@ module TestYear2023Solutions =
         let actual = Year2023.Day02.solve (getInput day)
 
         Assert.Equal(expected, actual)
+
+    [<Fact>]
+    let ``Solves Day 3`` () =
+        let day = 3
+        let expected = BothInt(539713, 84159075)
+
+        let actual = Year2023.Day03.solve (getInput day)
+
+        Assert.Equal(expected, actual)
