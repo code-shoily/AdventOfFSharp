@@ -2,128 +2,144 @@
 /// Link: https://adventofcode.com/2023/day/3
 /// Difficulty: m
 /// Tags: disjoint-set
-/// Remarks: 
+/// Remarks:
 module Year2023.Day03
 
 open System
 open Common.Types
 
-module Schematic =
-    type PartState =
-        { Count: int
-          Origin: (int * int) option
-          ParentMapping: Map<int * int, int * int>
-          Parts: char list
-          Positions: (int * int) list
-          Collection: ((int * int) * int) seq }
+type Input =
+    { Parts: Map<int * int, int>
+      SymbolTable: ((int * int) * char) seq
+      Parents: Map<int * int, int * int> }
 
-        static member empty =
-            { Count = 0
-              Origin = None
-              ParentMapping = Map.empty
-              Parts = List.empty
-              Positions = List.empty
-              Collection = Seq.empty }
+type PartState =
+    { Count: int
+      Origin: (int * int) option
+      Parents: Map<int * int, int * int>
+      Parts: char list
+      Positions: (int * int) list
+      Collection: ((int * int) * int) seq }
 
-    let onPartFound (rowIdx: int) (colIdx: int) (digit: char) (state: PartState) =
-        let { Origin = origin
-              ParentMapping = parentMapping
-              Parts = parts
-              Positions = positions } =
-            state
+    static member empty =
+        { Count = 0
+          Origin = None
+          Parents = Map.empty
+          Parts = List.empty
+          Positions = List.empty
+          Collection = Seq.empty }
 
-        let newOrigin = origin |> Option.defaultValue (rowIdx, colIdx) |> Some
+let onPartFound (rowIdx: int) (colIdx: int) (digit: char) (state: PartState) =
+    let { Origin = origin
+          Parents = parents
+          Parts = parts
+          Positions = positions } =
+        state
+
+    let newOrigin = origin |> Option.defaultValue (rowIdx, colIdx) |> Some
+
+    { state with
+        Count = colIdx
+        Parents = parents |> Map.add (rowIdx, colIdx) newOrigin.Value
+        Origin = newOrigin
+        Parts = digit :: parts
+        Positions = (rowIdx, colIdx) :: positions }
+
+let onPartCollected (state: PartState) =
+    let { Collection = collection
+          Parts = parts
+          Positions = positions } =
+        state
+
+    if not parts.IsEmpty then
+        let part = parts |> Seq.rev |> String.Concat |> int
 
         { state with
-            Count = colIdx
-            ParentMapping = parentMapping |> Map.add (rowIdx, colIdx) newOrigin.Value
-            Origin = newOrigin
-            Parts = digit :: parts
-            Positions = (rowIdx, colIdx) :: positions }
+            Count = 0
+            Origin = None
+            Parts = List.empty
+            Positions = List.empty
+            Collection =
+                seq {
+                    yield! collection
 
-    let onPartCollected (state: PartState) =
-        let { Collection = collection
-              Parts = parts
-              Positions = positions } =
-            state
+                    for pos in positions do
+                        yield (pos, part)
+                } }
+    else
+        state
 
-        if not parts.IsEmpty then
-            let part = parts |> Seq.rev |> String.Concat |> int
+let getPartsData (lineIdx: int) (line: string) =
+    let metadata =
+        (PartState.empty, Seq.indexed line)
+        ||> Seq.fold (fun state (idx, value) ->
+            if Char.IsDigit(value) then
+                (value, state) ||> onPartFound lineIdx idx
+            else
+                state |> onPartCollected)
+        |> onPartCollected
 
-            { state with
-                Count = 0
-                Origin = None
-                Parts = List.empty
-                Positions = List.empty
-                Collection =
-                    seq {
-                        yield! collection
+    metadata.Collection, metadata.Parents
 
-                        for pos in positions do
-                            yield (pos, part)
-                    } }
-        else
-            state
+let adjacencySetOf (x, y) =
+    Set.ofList
+    <| [ (x + 1, y)
+         (x - 1, y)
+         (x, y + 1)
+         (x, y - 1)
+         (x + 1, y + 1)
+         (x - 1, y - 1)
+         (x + 1, y - 1)
+         (x - 1, y + 1) ]
 
-    let getPartsData (lineIdx: int) (line: string) =
-        let metadata =
-            (PartState.empty, Seq.indexed line)
-            ||> Seq.fold (fun state (idx, value) ->
-                if Char.IsDigit(value) then
-                    (value, state) ||> onPartFound lineIdx idx
-                else
-                    state |> onPartCollected)
-            |> onPartCollected
+let buildTable (lineIdx: int) =
+    Seq.mapi (fun idx ->
+        function
+        | '.' -> None
+        | part when Char.IsDigit(part) -> None
+        | gear -> Some((lineIdx, idx), gear))
+    >> Seq.choose id
 
-        metadata.Collection, metadata.ParentMapping
+let allSymbols = Seq.map fst
+let gears = Seq.filter (snd >> (=) '*') >> allSymbols
 
-    let adjacencySetOf (x, y) =
-        Set.ofList
-        <| [ (x + 1, y)
-             (x - 1, y)
-             (x, y + 1)
-             (x, y - 1)
-             (x + 1, y + 1)
-             (x - 1, y - 1)
-             (x + 1, y - 1)
-             (x - 1, y + 1) ]
+let parse (rawInput: string seq) =
+    let parts = rawInput |> Seq.mapi getPartsData
 
-    let buildTable (lineIdx: int) =
-        Seq.mapi (fun idx ->
-            function
-            | '.' -> None
-            | part when Char.IsDigit(part) -> None
-            | gear -> Some((lineIdx, idx), gear))
-        >> Seq.choose id
+    { Parts = parts |> Seq.map fst |> Seq.concat |> Map
+      SymbolTable = rawInput |> Seq.mapi buildTable |> Seq.concat
+      Parents = parts |> Seq.map snd |> Seq.collect Map.toSeq |> Map }
 
-    let allSymbols = Seq.map fst
-    let gears = Seq.filter (snd >> (=) '*') >> allSymbols
 
-let solvePart1 parts symbolTable (mapping: Map<int * int, int * int>) =
+let solvePart1
+    { Parts = parts
+      SymbolTable = symbolTable
+      Parents = parents }
+    =
     let gearEdges =
         symbolTable
-        |> Schematic.allSymbols
-        |> Seq.collect (Schematic.adjacencySetOf >> Set.toSeq)
+        |> allSymbols
+        |> Seq.collect (adjacencySetOf >> Set.toSeq)
         |> Set.ofSeq
 
     let partLocations = parts |> Map.keys |> Set.ofSeq
 
     Set.intersect gearEdges partLocations
-    |> Seq.map (fun p -> mapping[p])
+    |> Seq.map (fun p -> parents[p])
     |> Seq.distinct
     |> Seq.map (fun p -> parts[p])
     |> Seq.sum
 
-let solvePart2 parts symbolTable (mapping: Map<int * int, int * int>) =
-    let gears = Schematic.gears symbolTable
-    let partLocations = parts |> Map.keys |> Set.ofSeq
-
-    gears
+let solvePart2
+    { Parts = parts
+      SymbolTable = symbolTable
+      Parents = parents }
+    =
+    gears symbolTable
     |> Seq.map (
-        Schematic.adjacencySetOf
-        >> (Set.intersect partLocations)
-        >> Set.toSeq
-        >> Seq.map (fun p -> mapping[p])
+        adjacencySetOf
+        >> Set.intersect (parts |> Map.keys |> Set.ofSeq)
+        >> Seq.map (fun p -> parents[p])
         >> Seq.distinct
         >> List.ofSeq
         >> (function
@@ -132,16 +148,7 @@ let solvePart2 parts symbolTable (mapping: Map<int * int, int * int>) =
     )
     |> Seq.sum
 
-let parse (rawInput: string seq) =
-    let partMetadata = rawInput |> Seq.mapi Schematic.getPartsData
-
-    let parts = partMetadata |> Seq.map fst |> Seq.concat |> Map
-    let symbolTable = rawInput |> Seq.mapi Schematic.buildTable |> Seq.concat
-    let parentMapping = partMetadata |> Seq.map snd |> Seq.collect Map.toSeq |> Map
-
-    parts, symbolTable, parentMapping
-
 let solve (rawInput: string seq) =
     let input = parse rawInput
 
-    BothInt(input |||> solvePart1, input |||> solvePart2)
+    BothInt(solvePart1 input, solvePart2 input)
