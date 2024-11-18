@@ -10,5 +10,4 @@ let getInput year day = readLines year day |> Option.get
 let rawInput = getInput 2023 3
 
 (* Copy Pasta *)
-
 (* Experiments go here *)
