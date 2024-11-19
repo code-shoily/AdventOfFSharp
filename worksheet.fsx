@@ -5,6 +5,6 @@ open IOUtils
 
 let getInput year day = readLines year day |> Option.get
 
-let rawInput = getInput 2015 4
+let rawInput = getInput 2015 5
 (* Copy Pasta *)
 (* Experiments go here *)
