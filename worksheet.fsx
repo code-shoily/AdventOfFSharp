@@ -5,6 +5,10 @@ open IOUtils
 
 let getInput year day = readLines year day |> Option.get
 
-let rawInput = getInput 2015 6
+open System
+open Common.Types
+open Common.Helpers
+
+let rawInput = getInput 2020 4
 (* Copy Pasta *)
 (* Experiments go here *)
