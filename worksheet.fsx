@@ -9,6 +9,6 @@ open System
 open Common.Types
 open Common.Helpers
 
-let rawInput = getInput 2020 4
+let rawInput = getInput 2020 5
 (* Copy Pasta *)
 (* Experiments go here *)
