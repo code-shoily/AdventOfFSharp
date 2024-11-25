@@ -9,11 +9,11 @@ open IOUtils
 let getInput year day = readLines year day |> Option.get
 
 open System
+open System.Security.Cryptography
 open Common.Types
 open Common.Helpers
 
-let rawInput = getInput 2020 7
+let rawInput = getInput 2016 5
+
 (* Copy Pasta *)
 (* Experiments go here *)
-
-rawInput |> solve
