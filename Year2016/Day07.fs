@@ -29,7 +29,7 @@ module Helpers =
             | _ -> unreachable ())
         |> Seq.choose id
 
-type IPAddress =
+type IPv7 =
     { Supernets: string seq
       Hypernets: string seq }
 
@@ -70,14 +70,14 @@ type IPAddress =
                     Inside = current :: inside
                     Current = List.empty |}
             | ch -> {| state with Current = ch :: current |})
-        |> (fun seqState ->
-            { Supernets = (seqState.Current :: seqState.Outside) |> Seq.map (List.rev >> String.Concat)
-              Hypernets = seqState.Inside |> Seq.map (List.rev >> String.Concat) })
+        |> (fun state ->
+            { Supernets = (state.Current :: state.Outside) |> Seq.map (List.rev >> String.Concat)
+              Hypernets = state.Inside |> Seq.map (List.rev >> String.Concat) })
 
-let parse = Seq.map IPAddress.fromLine
+let parse = Seq.map IPv7.fromLine
 
-let solvePart1: IPAddress seq -> int = Seq.filter _.supportsTLS >> Seq.length
-let solvePart2: IPAddress seq -> int = Seq.filter _.supportsSSL >> Seq.length
+let solvePart1: IPv7 seq -> int = Seq.filter _.supportsTLS >> Seq.length
+let solvePart2: IPv7 seq -> int = Seq.filter _.supportsSSL >> Seq.length
 
 let solve (rawInput: string seq) =
     let input = parse rawInput
