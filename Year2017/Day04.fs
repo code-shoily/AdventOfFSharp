@@ -1,7 +1,7 @@
-/// Year 2017/4 - ???
+/// Year 2017/4 - High-Entropy Passphrases
 /// Link: https://adventofcode.com/2017/day/4
-/// Difficulty:
-/// Tags:
+/// Difficulty: xs
+/// Tags: anagram
 /// Remarks:
 module Year2017.Day04
 
