@@ -55,7 +55,9 @@ let solvePart2 (secret: string) =
         else
             decryptPassword (nextNumber + 1) positions result
 
-    let positions = set [ Some 0; Some 1; Some 2; Some 3; Some 4; Some 5; Some 6; Some 7 ]
+    let positions =
+        set [ Some 0; Some 1; Some 2; Some 3; Some 4; Some 5; Some 6; Some 7 ]
+
     decryptPassword 1 positions []
     |> List.sortBy (fst >> _.Value)
     |> List.map snd

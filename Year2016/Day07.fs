@@ -52,7 +52,7 @@ type IPAddress =
 
         hypernetBABs.Count > 0
 
-    static member fromLine (line: string) =
+    static member fromLine(line: string) =
         ({| Outside = List.empty
             Inside = List.empty
             Current = List.empty |},
