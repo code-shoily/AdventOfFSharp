@@ -7,7 +7,6 @@ module Year2016.Day02
 
 open Common.Types
 open Common.Helpers
-open System
 
 type Direction =
     | Up
@@ -44,7 +43,7 @@ let crackKeyCode dialPad startingPoint directions =
     |> snd
     |> Seq.map (fun (x, y) -> dialPad[x][y])
     |> Seq.rev
-    |> String.Concat
+    |> String.concat ""
 
 let solvePart1 =
     let dialPad =

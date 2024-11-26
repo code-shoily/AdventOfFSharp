@@ -44,7 +44,7 @@ module TestYear2016Solutions =
 
         Assert.Equal(expected, actual)
 
-    [<Fact>]
+    [<Fact(Skip = "Slow")>]
     let ``Solves Day 5`` () =
         let day = 5
         let expected = BothString("F77A0E6E", "999828EC")

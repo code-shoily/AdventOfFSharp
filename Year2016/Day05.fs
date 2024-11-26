@@ -21,8 +21,8 @@ let solvePart1 (secret: string) =
     Seq.initInfinite id
     |> Seq.map (findHashFor secret)
     |> Seq.filter _.StartsWith("00000")
-    |> Seq.map (fun s -> s[5])
-    |> Seq.take (8)
+    |> Seq.map (fun s -> string s[5])
+    |> Seq.take 8
     |> String.Concat
 
 let solvePart2 (secret: string) =

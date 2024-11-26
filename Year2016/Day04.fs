@@ -5,7 +5,6 @@
 /// Remarks:
 module Year2016.Day04
 
-open System
 open Common.Helpers
 open Common.Types
 
@@ -20,7 +19,11 @@ module Helpers =
             | _ -> -1)
 
     let computeChecksum (encryptedRoom: string) =
-        encryptedRoom |> charFreq |> Seq.take 5 |> Seq.map fst |> String.Concat
+        encryptedRoom
+        |> charFreq
+        |> Seq.take 5
+        |> Seq.map (fst >> string)
+        |> String.concat ""
 
 type Room =
     { EncryptedName: string
@@ -36,11 +39,11 @@ type Room =
 
             char ((int 'a') + (outputIndex % 26))
 
-        this.EncryptedName |> Seq.map decryptChar |> String.Concat
+        this.EncryptedName |> Seq.map (decryptChar >> string) |> String.concat ""
 
     static member fromLine(line: string) =
         let tokens = line.Split("-")
-        let encryptedName = tokens[0 .. (tokens.Length - 2)] |> String.Concat
+        let encryptedName = tokens[0 .. (tokens.Length - 2)] |> String.concat ""
 
         let id, checksum =
             match (Array.last tokens).Replace("]", "").Split("[") with

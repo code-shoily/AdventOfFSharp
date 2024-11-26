@@ -5,7 +5,6 @@
 /// Remarks:
 module Year2017.Day04
 
-open System
 open Common.Types
 
 let parse: string seq -> string[] seq = Seq.map _.Split(" ")
@@ -21,7 +20,7 @@ let solvePart1 =
 
 let solvePart2 =
     let hasNoAnagram (passphrases: string[]) =
-        (passphrases |> countSets (Seq.sort >> String.Concat)) = Array.length passphrases
+        (passphrases |> countSets (Seq.sort >> Seq.map string >> String.concat "")) = Array.length passphrases
 
     Seq.filter hasNoAnagram >> Seq.length
 
