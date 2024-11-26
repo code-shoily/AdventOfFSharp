@@ -13,7 +13,8 @@ open System.Security.Cryptography
 open Common.Types
 open Common.Helpers
 
-let rawInput = getInput 2016 6
+let rawInput = getInput 2016 7
 
 (* Copy Pasta *)
+
 (* Experiments go here *)
