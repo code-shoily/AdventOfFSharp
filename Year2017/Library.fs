@@ -8,4 +8,5 @@ module Solver =
         | 1 -> Day01.solve input |> Ok
         | 2 -> Day02.solve input |> Ok
         | 4 -> Day04.solve input |> Ok
+        | 5 -> Day05.solve input |> Ok
         | _ -> NotDoneYet |> Error
