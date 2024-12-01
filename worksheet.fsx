@@ -1,7 +1,7 @@
 ﻿#r "C:/Users/mafin/repos/fsharp/AdventOfFSharp/IOUtils/bin/Debug/net9.0/IOUtils.dll"
 #r "C:/Users/mafin/repos/fsharp/AdventOfFSharp/Common/bin/Debug/net9.0/Common.dll"
 
-open System.Collections.Generic
+open System.Collections
 open System.Text
 open System.Text.RegularExpressions
 open IOUtils
@@ -13,7 +13,7 @@ open System.Security.Cryptography
 open Common.Types
 open Common.Helpers
 
-let rawInput = getInput 2017 4
+let rawInput = getInput 2017 7
 
 (* Copy Pasta *)
 (* Experiments go here *)

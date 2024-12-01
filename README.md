@@ -20,7 +20,7 @@ More about Advent of Code [here](https://adventofcode.com/about).
 |   4    | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |                   |                   | :1st_place_medal: |                   | :1st_place_medal: |                   |                  |
 |   5    | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |                   |                   | :1st_place_medal: |                   |                   |                   |                  |
 |   6    | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |                   |                   | :1st_place_medal: |                   |                   |                   |                  |
-|   7    |                   | :1st_place_medal: |                   |                   |                   | :1st_place_medal: |                   |                   |                   |                  |
+|   7    |                   | :1st_place_medal: | :2nd_place_medal: |                   |                   | :1st_place_medal: |                   |                   |                   |                  |
 |   8    |                   |                   |                   |                   |                   |                   |                   |                   |                   |                  |
 |   9    |                   |                   |                   |                   |                   |                   |                   |                   |                   |                  |
 |   10   |                   |                   |                   |                   |                   |                   |                   |                   |                   |                  |
