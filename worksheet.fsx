@@ -13,7 +13,9 @@ open System.Security.Cryptography
 open Common.Types
 open Common.Helpers
 
-let rawInput = getInput 2017 7
+let rawInput = getInput 2024 1
 
 (* Copy Pasta *)
+
 (* Experiments go here *)
+solve rawInput
