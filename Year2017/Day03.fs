@@ -32,7 +32,6 @@ let solvePart1 (input: int) =
     let x, y = getPosition input
     (abs x + abs y)
 
-[<TailCall>]
 let solvePart2 (input: int) =
     let rec allocate i (cache: Map<int * int, int>) =
         function

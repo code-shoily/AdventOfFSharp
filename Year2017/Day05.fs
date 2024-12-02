@@ -9,7 +9,6 @@ open Common.Types
 
 let parse = Seq.map int >> Array.ofSeq
 
-[<TailCall>]
 let solvePart1 (input: int[]) =
     let arr = Array.copy input
 
@@ -23,7 +22,6 @@ let solvePart1 (input: int[]) =
 
     jump 0 0
 
-[<TailCall>]
 let solvePart2 (input: int[]) =
     let arr = Array.copy input
 
