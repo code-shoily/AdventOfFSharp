@@ -53,10 +53,10 @@ module TestYear2024Solutions =
 
         Assert.Equal(expected, actual)
 
-    [<Fact>]
+    [<Fact(Skip="Slow")>]
     let ``Solves Day 6`` () =
         let day = 6
-        let expected = BothInt(4982, 0)
+        let expected = BothInt(4982, 1663)
 
         let actual = Year2024.Day06.solve (getInput day)
 

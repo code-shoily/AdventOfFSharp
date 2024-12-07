@@ -1,8 +1,8 @@
 /// Year 2024/6 - Day 6: Guard Gallivant
 /// Link: https://adventofcode.com/2024/day/6
 /// Difficulty: m
-/// Tags: map2d
-/// Remarks:
+/// Tags: navigation slow should-refactor
+/// Remarks: Add concurrency to part 2
 module Year2024.Day06
 
 open Common.Helpers
@@ -46,6 +46,8 @@ type Guard =
         | Left -> x, y - 1
         | Right -> x, y + 1
 
+    member this.placement() = (this.Facing, this.Position)
+
 let mapStateAt (lab: MapItem[][]) (x, y) =
     if x < 0 || x >= lab.Length || y < 0 || y >= lab[x].Length then
         {| Escape = true; ShouldTurn = false |}
@@ -54,6 +56,7 @@ let mapStateAt (lab: MapItem[][]) (x, y) =
     else
         {| Escape = false; ShouldTurn = false |}
 
+[<TailCall>]
 let rec nextMove lab (guard: Guard) =
     let newPosition = guard.nextMove ()
     let newPositionStatus = mapStateAt lab newPosition
@@ -65,15 +68,36 @@ let rec nextMove lab (guard: Guard) =
     else
         Some { guard with Position = newPosition }
 
-let solvePart1 lab (guard: Guard) =
+[<TailCall>]
+let getVisitedPositions lab (guard: Guard) =
     let rec prediction guard visits =
         match (nextMove lab guard) with
         | None -> visits
         | Some({ Position = position } as guard) -> prediction guard (visits |> Set.add position)
 
-    prediction guard (set [ guard.Position ]) |> Seq.length
+    prediction guard (set [ guard.Position ])
 
-let solvePart2 _lab (_guard: Guard) = todo ()
+[<TailCall>]
+let isLooping lab (guard: Guard) =
+    let rec prediction guard (visits: Set<Direction * (int * int)>) =
+        match (nextMove lab guard) with
+        | None -> false
+        | Some guard ->
+            visits.Contains(guard.placement ())
+            || prediction guard (visits |> Set.add (guard.placement ()))
+
+    prediction guard (set [ guard.placement () ])
+
+
+let solvePart1 = Seq.length >> (+) 1
+
+let solvePart2 (lab: MapItem[][]) (guard: Guard) =
+    Seq.filter (fun (x, y) ->
+        lab[x][y] <- Obstacle
+        let looping = isLooping lab guard
+        lab[x][y] <- Path
+        looping)
+    >> Seq.length
 
 let parse (rawInput: string seq) =
     let labMap =
@@ -88,5 +112,9 @@ let parse (rawInput: string seq) =
     labMap, { Position = position; Facing = Up }
 
 let solve (rawInput: string seq) =
-    let map, guard = parse rawInput
-    BothInt(solvePart1 map guard, 0)
+    let lab, guard = parse rawInput
+
+    let positionsVisited =
+        getVisitedPositions lab guard |> Set.remove guard.Position |> Set.toSeq
+
+    BothInt(solvePart1 positionsVisited, solvePart2 lab guard positionsVisited)
