@@ -13,9 +13,7 @@ open System.Security.Cryptography
 open Common.Types
 open Common.Helpers
 
-let rawInput = getInput 2024 1
+let rawInput = getInput 2018 4
+let getSampleInput: string -> string seq = _.Split("\n") >> Seq.ofArray
 
 (* Copy Pasta *)
-
-(* Experiments go here *)
-solve rawInput
