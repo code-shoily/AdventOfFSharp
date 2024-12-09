@@ -29,7 +29,7 @@ let main argv =
             (int argv[0], int argv[1])
         else
             (2018, 4)
-            
+
     let result =
         if isValid year day then
             solutionFor year day

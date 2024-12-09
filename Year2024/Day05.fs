@@ -2,7 +2,7 @@
 /// Link: https://adventofcode.com/2024/day/5
 /// Difficulty: s
 /// Tags: sort set
-/// Remarks: 
+/// Remarks:
 module Year2024.Day05
 
 open Common.Helpers
