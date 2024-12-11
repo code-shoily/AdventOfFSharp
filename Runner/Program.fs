@@ -28,7 +28,7 @@ let main argv =
         if argv.Length = 2 then
             (int argv[0], int argv[1])
         else
-            (2018, 4)
+            (2024, 11)
 
     let result =
         if isValid year day then
