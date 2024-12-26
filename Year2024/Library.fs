@@ -15,4 +15,5 @@ module Solver =
         | 8 -> Day08.solve input |> Ok
         | 10 -> Day10.solve input |> Ok
         | 11 -> Day11.solve input |> Ok
+        | 25 -> Day25.solve input |> Ok
         | _ -> Error(NotDoneYet)
