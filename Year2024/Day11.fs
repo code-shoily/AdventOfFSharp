@@ -25,14 +25,6 @@ let (|SinglePebble|PebblePair|) pebbleBefore =
     | _, even when even % 2 = 0 -> PebblePair(getHalves pebbleBefore (even / 2))
     | n, _ -> SinglePebble(n * 2024L)
 
-let parse: (string seq -> Map<int64, int64>) =
-    Seq.exactlyOne
-    >> _.Split(" ")
-    >> Seq.map int64
-    >> Seq.countBy id
-    >> Seq.map (fun (k, v) -> (k, int64 v))
-    >> Map.ofSeq
-
 module Counter =
     let newPebble engrave howMany counter =
         counter
@@ -66,6 +58,14 @@ let afterBlinks n input =
 
 let solvePart1 = afterBlinks 25
 let solvePart2 = afterBlinks 75
+
+let parse: (string seq -> Map<int64, int64>) =
+    Seq.exactlyOne
+    >> _.Split(" ")
+    >> Seq.map int64
+    >> Seq.countBy id
+    >> Seq.map (fun (k, v) -> (k, int64 v))
+    >> Map.ofSeq
 
 let solve (rawInput: string seq) =
     let input = parse rawInput
