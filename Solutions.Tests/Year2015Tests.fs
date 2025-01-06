@@ -1,16 +1,13 @@
 module Year2015Tests
 
+open Common.Types
 open Common.Helpers
 open Solutions.Tests
+open Year2015
+
 open Xunit
-open FsUnit.Xunit
 
 module TestYear2015Solutions =
-    open Common.Types
-    open Year2015
-
-    let getInput = Helpers.getInput 2015
-
     let getSolver day =
         match day with
         | 1 -> Day01.solve
@@ -40,8 +37,8 @@ module TestYear2015Solutions =
         | 25 -> Day25.solve
         | _ -> unreachable ()
 
-    let isExpectedFor day result =
-        day |> getInput |> (getSolver day) |> should equal result
+    let getInput = Helpers.getInput 2015
+    let isExpectedFor = Helpers.isExpectedForUtil getSolver 2015
 
     [<Fact>]
     let ``Solves Day 1`` () = BothInt(232, 1783) |> isExpectedFor 1
