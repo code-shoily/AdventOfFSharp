@@ -1,18 +1,11 @@
-﻿#r "C:/Users/mafin/repos/fsharp/AdventOfFSharp/IOUtils/bin/Debug/net9.0/IOUtils.dll"
-#r "C:/Users/mafin/repos/fsharp/AdventOfFSharp/Common/bin/Debug/net9.0/Common.dll"
-// #r "nuget: FSharpx.Collections"
+﻿#r "./IOUtils/bin/Debug/net9.0/IOUtils.dll"
+#r "./Common/bin/Debug/net9.0/Common.dll"
 
-open System
-open System.Collections
-open System.Globalization
-open System.Security.AccessControl
-open System.Text
-open System.Text.RegularExpressions
-open Common.Types
-open Common.Helpers
 open IOUtils
 
-let getInput year day = readLines year day |> Option.get
+let captureInputAs f year month =
+    readLines year month
+    |> (Option.map f)
 
-let rawInput = getInput 2024 25
-(* Copy Pasta *)
+let inputAsString = captureInputAs (String.concat "\n")
+let inputAsList = captureInputAs List.ofSeq
