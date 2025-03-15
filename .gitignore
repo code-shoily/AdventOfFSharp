@@ -6,3 +6,4 @@ riderModule.iml
 .idea
 AdventOfFSharp.sln.DotSettings.user
 .fake
+.DS_Store
