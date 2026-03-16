@@ -9,11 +9,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="../Inputs/*.*" CopyToOutputDirectory="PreserveNewest" Link="Inputs/%(Filename)%(Extension)"/>
+        <Content Include="../Inputs/*.*" CopyToOutputDirectory="PreserveNewest" Link="Inputs/%(Filename)%(Extension)" />
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Include="Library.fs"/>
+        <Compile Include="Library.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
     </ItemGroup>
 
 </Project>

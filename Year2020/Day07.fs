@@ -1,34 +1,16 @@
 /// Year 2020/7 - Handy Haversacks
 /// Link: https://adventofcode.com/2020/day/7
-/// Difficulty: m
-/// Tags: dfs
-/// Remarks:
+/// Difficulty: s
+/// Tags: graph dfs
+/// Remarks: Uses Yog.FSharp for graph operations
 module Year2020.Day07
 
 open System
+open System.Collections.Generic
 open Common.Helpers
 open Common.Types
-
-[<AutoOpen>]
-module Graph =
-    type Graph = Map<string, Map<string, int>>
-
-    let dfs (source: string) (graph: Graph) =
-        let visitedList: ResizeArray<string list> = ResizeArray()
-
-        let rec dfsUtil (currentNode: string) (visited: string list) =
-            let visited = currentNode :: visited
-
-            if graph.ContainsKey currentNode then
-                for node in graph[currentNode].Keys do
-                    if not (List.contains node visited) then
-                        dfsUtil node visited
-
-            visitedList.Add <| List.rev visited
-
-        dfsUtil source List.empty
-
-        visitedList.ToArray()
+open Yog.Model
+open Yog.Traversal
 
 [<AutoOpen>]
 module Parser =
@@ -44,51 +26,86 @@ module Parser =
 
         bagCount.Split(",", StringSplitOptions.TrimEntries)
         |> Seq.map getBagInfo
-        |> Map.ofSeq
+        |> Seq.filter (fun (_, count) -> count > 0)
 
     let parseBag (bagInfo: string) =
         match bagInfo.Split("bags contain", StringSplitOptions.TrimEntries) with
-        | [| source; rest |] -> (source.Replace(" ", ""), getBags rest)
+        | [| source; rest |] ->
+            let sourceKey = source.Replace(" ", "")
+            let contained = getBags rest |> Seq.toList
+            sourceKey, contained
         | _ -> unreachable ()
 
+    let buildIdMap (lines: string seq) : Map<string, int> =
+        let idMap = Dictionary<string, int>()
+        let mutable nextId = 1
+        
+        let getOrAddId name =
+            if not (idMap.ContainsKey(name)) then
+                idMap.[name] <- nextId
+                nextId <- nextId + 1
+            idMap.[name]
+        
+        for line in lines do
+            let source, contained = parseBag line
+            getOrAddId source |> ignore
+            for (name, _) in contained do
+                getOrAddId name |> ignore
+        
+        idMap |> Seq.map (fun kv -> kv.Key, kv.Value) |> Map.ofSeq
 
-    let transposedGraph (graph: Map<string, Map<string, int>>) =
-        (Map.empty, graph)
-        ||> Seq.fold (fun state edges ->
-            let target, vertexMap = edges.Key, Map.toSeq edges.Value
+    let buildGraph (idMap: Map<string, int>) (lines: string seq) : Graph<int, int> =
+        let folder graph (source, contained) =
+            let sourceId = idMap.[source]
+            let graphWithNode = addNode sourceId sourceId graph
+            (graphWithNode, contained)
+            ||> Seq.fold (fun g (target, count) ->
+                let targetId = idMap.[target]
+                let gWithTarget = addNode targetId targetId g
+                addEdge sourceId targetId count gWithTarget)
 
-            (state, vertexMap)
-            ||> Seq.fold (fun newMap (vertex, weight) ->
-                newMap
-                |> Map.change vertex (fun value ->
-                    match value with
-                    | Some value -> Some(value |> (Map.add target weight))
-                    | None -> Some(Map.ofSeq [ (target, weight) ]))))
+        lines
+        |> Seq.map parseBag
+        |> Seq.fold folder (empty Directed)
 
-    let parse = Seq.map parseBag >> Map.ofSeq
+    let buildTransposedGraph (idMap: Map<string, int>) (lines: string seq) : Graph<int, int> =
+        let folder graph (source, contained) =
+            let sourceId = idMap.[source]
+            let graphWithNode = addNode sourceId sourceId graph
+            (graphWithNode, contained)
+            ||> Seq.fold (fun g (target, count) ->
+                let targetId = idMap.[target]
+                let gWithTarget = addNode targetId targetId g
+                addEdge targetId sourceId count gWithTarget)
 
-let solvePart1 graph =
-    let paths =
-        graph
-        |> transposedGraph
-        |> dfs "shinygold"
-        |> Seq.collect id
-        |> Seq.distinct
-        |> Seq.length
+        lines
+        |> Seq.map parseBag
+        |> Seq.fold folder (empty Directed)
 
-    paths - 1 // Remove the self bag
+let solvePart1 (transposedGraph: Graph<int, int>) shinyGoldId =
+    let reachableNodes =
+        walk shinyGoldId DepthFirst transposedGraph
+        |> Set.ofList
 
-let solvePart2 graph =
-    let bagsContained =
-        graph
-        |> dfs "shinygold"
-        |> Seq.map (fun path ->
-            let edges = Seq.pairwise path
-            (1, edges) ||> Seq.fold (fun state (src, dst) -> state * graph[src][dst]))
-        |> Seq.sum
+    reachableNodes.Count - 1
 
-    bagsContained - 1 // Remove the singleton node
+let solvePart2 (graph: Graph<int, int>) shinyGoldId =
+    let rec countBagsInside bagId =
+        match Map.tryFind bagId graph.OutEdges with
+        | None -> 0
+        | Some outEdges ->
+            outEdges
+            |> Map.toSeq
+            |> Seq.sumBy (fun (containedId, count) ->
+                count + count * countBagsInside containedId)
+
+    countBagsInside shinyGoldId
 
 let solve (rawInput: string seq) =
-    let input = parse rawInput
-    BothInt(solvePart1 input, solvePart2 input)
+    let lines = rawInput |> Seq.toList
+    let idMap = Parser.buildIdMap lines
+    let shinyGoldId = idMap.["shinygold"]
+    let graph = Parser.buildGraph idMap lines
+    let transposedGraph = Parser.buildTransposedGraph idMap lines
+
+    BothInt(solvePart1 transposedGraph shinyGoldId, solvePart2 graph shinyGoldId)

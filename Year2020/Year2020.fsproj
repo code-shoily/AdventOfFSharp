@@ -8,18 +8,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Day01.fs"/>
-        <Compile Include="Day02.fs"/>
-        <Compile Include="Day03.fs"/>
-        <Compile Include="Day04.fs"/>
-        <Compile Include="Day05.fs"/>
-        <Compile Include="Day06.fs"/>
-        <Compile Include="Day07.fs"/>
-        <Compile Include="Library.fs"/>
+        <Compile Include="Day01.fs" />
+        <Compile Include="Day02.fs" />
+        <Compile Include="Day03.fs" />
+        <Compile Include="Day04.fs" />
+        <Compile Include="Day05.fs" />
+        <Compile Include="Day06.fs" />
+        <Compile Include="Day07.fs" />
+        <Compile Include="Library.fs" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Common\Common.fsproj"/>
+        <ProjectReference Include="..\Common\Common.fsproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Yog.FSharp" Version="0.5.0" />
     </ItemGroup>
 
 </Project>

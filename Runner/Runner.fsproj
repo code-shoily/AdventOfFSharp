@@ -10,21 +10,25 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Program.fs"/>
+        <Compile Include="Program.fs" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\IOUtils\IOUtils.fsproj"/>
-        <ProjectReference Include="..\Year2015\Year2015.fsproj"/>
-        <ProjectReference Include="..\Year2016\Year2016.fsproj"/>
-        <ProjectReference Include="..\Year2017\Year2017.fsproj"/>
-        <ProjectReference Include="..\Year2018\Year2018.fsproj"/>
-        <ProjectReference Include="..\Year2019\Year2019.fsproj"/>
-        <ProjectReference Include="..\Year2020\Year2020.fsproj"/>
-        <ProjectReference Include="..\Year2021\Year2021.fsproj"/>
-        <ProjectReference Include="..\Year2022\Year2022.fsproj"/>
-        <ProjectReference Include="..\Year2023\Year2023.fsproj"/>
-        <ProjectReference Include="..\Year2024\Year2024.fsproj"/>
+        <ProjectReference Include="..\IOUtils\IOUtils.fsproj" />
+        <ProjectReference Include="..\Year2015\Year2015.fsproj" />
+        <ProjectReference Include="..\Year2016\Year2016.fsproj" />
+        <ProjectReference Include="..\Year2017\Year2017.fsproj" />
+        <ProjectReference Include="..\Year2018\Year2018.fsproj" />
+        <ProjectReference Include="..\Year2019\Year2019.fsproj" />
+        <ProjectReference Include="..\Year2020\Year2020.fsproj" />
+        <ProjectReference Include="..\Year2021\Year2021.fsproj" />
+        <ProjectReference Include="..\Year2022\Year2022.fsproj" />
+        <ProjectReference Include="..\Year2023\Year2023.fsproj" />
+        <ProjectReference Include="..\Year2024\Year2024.fsproj" />
+        <ProjectReference Include="..\Year2025\Year2025.fsproj" />
+    </ItemGroup>
+
+    <ItemGroup>
     </ItemGroup>
 
 </Project>
