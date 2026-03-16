@@ -20,7 +20,9 @@ let readLines year day =
             use sr = new StreamReader(filePath)
 
             while not sr.EndOfStream do
-                yield sr.ReadLine()
+                match sr.ReadLine() with
+                | null -> ()
+                | line -> yield line
         }
         |> Some
     | false -> None

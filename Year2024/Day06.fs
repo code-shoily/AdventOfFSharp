@@ -68,7 +68,6 @@ let rec nextMove lab (guard: Guard) =
     else
         Some { guard with Position = newPosition }
 
-[<TailCall>]
 let getVisitedPositions lab (guard: Guard) =
     let rec prediction guard visits =
         match (nextMove lab guard) with
@@ -77,7 +76,6 @@ let getVisitedPositions lab (guard: Guard) =
 
     prediction guard (set [ guard.Position ])
 
-[<TailCall>]
 let isLooping lab (guard: Guard) =
     let rec prediction guard (visits: Set<Direction * (int * int)>) =
         match (nextMove lab guard) with

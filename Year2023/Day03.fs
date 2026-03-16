@@ -8,11 +8,13 @@ module Year2023.Day03
 open System
 open Common.Types
 
+[<NoComparison>]
 type Input =
     { Parts: Map<int * int, int>
       SymbolTable: ((int * int) * char) seq
       Parents: Map<int * int, int * int> }
 
+[<NoComparison>]
 type PartState =
     { Count: int
       Origin: (int * int) option

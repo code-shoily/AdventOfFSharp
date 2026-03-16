@@ -1,13 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <RootNamespace>Utils</RootNamespace>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
+
     <ItemGroup>
         <Content Include="../Inputs/*.*" CopyToOutputDirectory="PreserveNewest" Link="Inputs/%(Filename)%(Extension)"/>
     </ItemGroup>
+
     <ItemGroup>
         <Compile Include="Library.fs"/>
     </ItemGroup>

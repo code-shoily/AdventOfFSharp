@@ -1,0 +1,60 @@
+# 🏷️ Tags Index
+
+[← Home](../README.md)
+
+| Tag | Problems |
+|-----|--------:|
+| [anagram](anagram.md) | 1 |
+| [arithmetic](arithmetic.md) | 1 |
+| [array](array.md) | 5 |
+| [array2d](array2d.md) | 1 |
+| [ascii](ascii.md) | 2 |
+| [bfs](bfs.md) | 1 |
+| [bignum](bignum.md) | 1 |
+| [binary](binary.md) | 1 |
+| [brute-force](brute-force.md) | 1 |
+| [counter](counter.md) | 1 |
+| [data-modeling](data-modeling.md) | 1 |
+| [data-transform](data-transform.md) | 1 |
+| [date-time](date-time.md) | 1 |
+| [dfs](dfs.md) | 1 |
+| [direction](direction.md) | 1 |
+| [disjoint-set](disjoint-set.md) | 1 |
+| [equation](equation.md) | 1 |
+| [fold](fold.md) | 1 |
+| [formula](formula.md) | 1 |
+| [frequency](frequency.md) | 3 |
+| [fsm](fsm.md) | 1 |
+| [geometry](geometry.md) | 5 |
+| [graph-traversal](graph-traversal.md) | 1 |
+| [grid](grid.md) | 1 |
+| [map-grid](map-grid.md) | 1 |
+| [matrix](matrix.md) | 1 |
+| [md5](md5.md) | 2 |
+| [memoization](memoization.md) | 1 |
+| [modular-algebra](modular-algebra.md) | 1 |
+| [mutable](mutable.md) | 2 |
+| [n-sum](n-sum.md) | 1 |
+| [navigation](navigation.md) | 5 |
+| [off-by-one](off-by-one.md) | 1 |
+| [optimization](optimization.md) | 1 |
+| [recursion](recursion.md) | 2 |
+| [reduction](reduction.md) | 2 |
+| [regex](regex.md) | 2 |
+| [scan](scan.md) | 1 |
+| [sequence](sequence.md) | 1 |
+| [set](set.md) | 5 |
+| [should-refactor](should-refactor.md) | 2 |
+| [simulation](simulation.md) | 1 |
+| [sliding-window](sliding-window.md) | 1 |
+| [slightly-slow](slightly-slow.md) | 2 |
+| [slope-intercept](slope-intercept.md) | 1 |
+| [slow](slow.md) | 3 |
+| [sort](sort.md) | 3 |
+| [spiral](spiral.md) | 1 |
+| [string](string.md) | 4 |
+| [tabular](tabular.md) | 1 |
+| [transpose](transpose.md) | 1 |
+| [typed](typed.md) | 1 |
+| [validation](validation.md) | 1 |
+| [window](window.md) | 1 |

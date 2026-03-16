@@ -29,6 +29,7 @@ module Helpers =
             | _ -> unreachable ())
         |> Seq.choose id
 
+[<NoComparison>]
 type IPv7 =
     { Supernets: string seq
       Hypernets: string seq }

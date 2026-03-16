@@ -1,6 +1,6 @@
 ﻿module Common.Helpers
 
-let unreachable () = failwith "unreachable"
+let unreachable<'T> () : 'T = failwith "unreachable"
 let todo () = failwith "todo"
 
 /// <summary>

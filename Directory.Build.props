@@ -1,0 +1,31 @@
+<Project>
+  <!-- 
+    Centralized MSBuild properties for all projects.
+    See: https://learn.microsoft.com/en-us/visualstudio/msbuild/customize-by-directory
+  -->
+  
+  <PropertyGroup>
+    <!-- Language Settings -->
+    <LangVersion>latest</LangVersion>
+    <FSharpPreferExplicitFrameworkReferences>true</FSharpPreferExplicitFrameworkReferences>
+    
+    <!-- Build Settings -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>5</WarningLevel>
+    
+    <!-- Code Quality -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Nullable>enable</Nullable>
+    
+    <!-- Implicit usings are a C# feature, not applicable to F# -->
+    <!-- But we can enable other modern SDK features -->
+    <EnableSdkContainerSupport>true</EnableSdkContainerSupport>
+    
+    <!-- Editor Config support -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+  
+  <!-- Central Package Management could be added here if desired -->
+  <!-- See: https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
+  
+</Project>
