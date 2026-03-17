@@ -6,11 +6,9 @@
 module Year2018.Day07
 
 open System
-open Common.Helpers
 open Common.Types
-open Yog.Model
+open Yog
 open Yog.Builder
-open Yog.Traversal
 
 let parse (rawInput: string seq) =
     rawInput
@@ -20,15 +18,15 @@ let parse (rawInput: string seq) =
     |> Seq.fold (fun b (prereq, step) -> b |> Labeled.addSimpleEdge prereq step) (Labeled.directed<string, int> ())
     |> Labeled.toGraph
 
-let solvePart1 (graph: Graph<string, int>) =
-    match lexicographicalTopologicalSort (fun a b -> String.Compare(a, b)) graph with
+let solvePart1 (graph: Model.Graph<string, int>) =
+    match Traversal.lexicographicalTopologicalSort (fun a b -> String.Compare(a, b)) graph with
     | Ok order ->
         order
         |> List.choose (fun id -> Map.tryFind id graph.Nodes)
         |> String.concat ""
     | Error () -> ""
 
-let solvePart2 (graph: Graph<string, int>) = 0
+let solvePart2 (_graph: Model.Graph<string, int>) = 0
 
 let solve (rawInput: string seq) =
     let input = parse rawInput
