@@ -1,4 +1,4 @@
-﻿namespace Year2018
+namespace Year2018
 
 open Common.Types
 
@@ -9,4 +9,5 @@ module Solver =
         | 2 -> Day02.solve input |> Ok
         | 3 -> Day03.solve input |> Ok
         | 4 -> Day04.solve input |> Ok
+        | 7 -> Day07.solve input |> Ok
         | _ -> NotDoneYet |> Error

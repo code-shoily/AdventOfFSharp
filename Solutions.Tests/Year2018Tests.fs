@@ -14,6 +14,7 @@ module TestYear2018Solutions =
         | 2 -> Day02.solve
         | 3 -> Day03.solve
         | 4 -> Day04.solve
+        | 7 -> Day07.solve
         | _ -> unreachable ()
 
     let getInput = Helpers.getInput 2018
@@ -32,3 +33,7 @@ module TestYear2018Solutions =
     [<Fact>]
     let ``Solves Day 4`` () =
         BothInt(74743, 132484) |> isExpectedFor 4
+
+    [<Fact>]
+    let ``Solves Day 7`` () =
+        StringInt ("BCADPVTJFZNRWXHEKSQLUYGMIO", 0) |> isExpectedFor 7
