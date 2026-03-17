@@ -53,10 +53,11 @@
 | 2018 | [2](https://adventofcode.com/2018/day/2) | [Inventory Management System](https://adventofcode.com/2018/day/2) | [string](tags/string.md) | [Day02.fs](../Year2018/Day02.fs) |
 | 2018 | [4](https://adventofcode.com/2018/day/4) | [Repose Record](https://adventofcode.com/2018/day/4) | [frequency](tags/frequency.md), [date-time](tags/date-time.md), [regex](tags/regex.md) | [Day04.fs](../Year2018/Day04.fs) |
 | 2019 | [2](https://adventofcode.com/2019/day/2) | [1202 Program Alarm](https://adventofcode.com/2019/day/2) | [array](tags/array.md), [simulation](tags/simulation.md) | [Day02.fs](../Year2019/Day02.fs) |
+| 2020 | [7](https://adventofcode.com/2020/day/7) | [Handy Haversacks](https://adventofcode.com/2020/day/7) | [graph](tags/graph.md), [dfs](tags/dfs.md) | [Day07.fs](../Year2020/Day07.fs) |
 | 2022 | [3](https://adventofcode.com/2022/day/3) | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | [set](tags/set.md), [ascii](tags/ascii.md) | [Day03.fs](../Year2022/Day03.fs) |
 | 2023 | [2](https://adventofcode.com/2023/day/2) | [Cube Conundrum](https://adventofcode.com/2023/day/2) | [reduction](tags/reduction.md) | [Day02.fs](../Year2023/Day02.fs) |
 | 2024 | [4](https://adventofcode.com/2024/day/4) | [Cares Search](https://adventofcode.com/2024/day/4) | [matrix](tags/matrix.md) | [Day04.fs](../Year2024/Day04.fs) |
-| 2024 | [5](https://adventofcode.com/2024/day/5) | [Print Queue](https://adventofcode.com/2024/day/5) | [sort](tags/sort.md), [set](tags/set.md) | [Day05.fs](../Year2024/Day05.fs) |
+| 2024 | [5](https://adventofcode.com/2024/day/5) | [Print Queue](https://adventofcode.com/2024/day/5) | [graph](tags/graph.md), [topological-sort](tags/topological-sort.md) | [Day05.fs](../Year2024/Day05.fs) |
 | 2024 | [11](https://adventofcode.com/2024/day/11) | [Plutonian Pebbles](https://adventofcode.com/2024/day/11) | [bignum](tags/bignum.md), [memoization](tags/memoization.md), [counter](tags/counter.md) | [Day11.fs](../Year2024/Day11.fs) |
 | 2024 | [25](https://adventofcode.com/2024/day/25) | [Code Chronicle](https://adventofcode.com/2024/day/25) | [data-transform](tags/data-transform.md) | [Day25.fs](../Year2024/Day25.fs) |
 
@@ -65,7 +66,6 @@
 | Year | Day | Title | Tags | Source |
 |------|:---:|-------|------|--------|
 | 2019 | [3](https://adventofcode.com/2019/day/3) | [Crossed Wires](https://adventofcode.com/2019/day/3) | [set](tags/set.md), [geometry](tags/geometry.md) | [Day03.fs](../Year2019/Day03.fs) |
-| 2020 | [7](https://adventofcode.com/2020/day/7) | [Handy Haversacks](https://adventofcode.com/2020/day/7) | [dfs](tags/dfs.md) | [Day07.fs](../Year2020/Day07.fs) |
 | 2023 | [3](https://adventofcode.com/2023/day/3) | [Gear Ratios](https://adventofcode.com/2023/day/3) | [disjoint-set](tags/disjoint-set.md) | [Day03.fs](../Year2023/Day03.fs) |
 | 2024 | [6](https://adventofcode.com/2024/day/6) | [Day 6: Guard Gallivant](https://adventofcode.com/2024/day/6) | [navigation](tags/navigation.md), [slow](tags/slow.md), [should-refactor](tags/should-refactor.md) | [Day06.fs](../Year2024/Day06.fs) |
 
