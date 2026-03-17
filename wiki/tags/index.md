@@ -18,6 +18,7 @@
 | [data-transform](data-transform.md) | 1 |
 | [date-time](date-time.md) | 1 |
 | [dfs](dfs.md) | 1 |
+| [difficult-part-2](difficult-part-2.md) | 1 |
 | [direction](direction.md) | 1 |
 | [disjoint-set](disjoint-set.md) | 1 |
 | [equation](equation.md) | 1 |
@@ -26,7 +27,7 @@
 | [frequency](frequency.md) | 3 |
 | [fsm](fsm.md) | 1 |
 | [geometry](geometry.md) | 5 |
-| [graph](graph.md) | 2 |
+| [graph](graph.md) | 3 |
 | [graph-traversal](graph-traversal.md) | 1 |
 | [grid](grid.md) | 1 |
 | [map-grid](map-grid.md) | 1 |
@@ -55,7 +56,7 @@
 | [spiral](spiral.md) | 1 |
 | [string](string.md) | 4 |
 | [tabular](tabular.md) | 1 |
-| [topological-sort](topological-sort.md) | 1 |
+| [topological-sort](topological-sort.md) | 2 |
 | [transpose](transpose.md) | 1 |
 | [typed](typed.md) | 1 |
 | [validation](validation.md) | 1 |

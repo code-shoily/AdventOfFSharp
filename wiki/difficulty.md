@@ -23,6 +23,7 @@
 | 2017 | [5](https://adventofcode.com/2017/day/5) | [A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5) | [array](tags/array.md) | [Day05.fs](../Year2017/Day05.fs) |
 | 2018 | [1](https://adventofcode.com/2018/day/1) | [Chronal Calibration](https://adventofcode.com/2018/day/1) | [scan](tags/scan.md) | [Day01.fs](../Year2018/Day01.fs) |
 | 2018 | [3](https://adventofcode.com/2018/day/3) | [No Matter How You Slice It](https://adventofcode.com/2018/day/3) | [fold](tags/fold.md), [geometry](tags/geometry.md), [slightly-slow](tags/slightly-slow.md) | [Day03.fs](../Year2018/Day03.fs) |
+| 2018 | [7](https://adventofcode.com/2018/day/7) | [The Sum of Its Parts](https://adventofcode.com/2018/day/7) | [graph](tags/graph.md), [topological-sort](tags/topological-sort.md), [difficult-part-2](tags/difficult-part-2.md) | [Day07.fs](../Year2018/Day07.fs) |
 | 2019 | [1](https://adventofcode.com/2019/day/1) | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | [formula](tags/formula.md), [recursion](tags/recursion.md) | [Day01.fs](../Year2019/Day01.fs) |
 | 2020 | [1](https://adventofcode.com/2020/day/1) | [Report Repair](https://adventofcode.com/2020/day/1) | [n-sum](tags/n-sum.md) | [Day01.fs](../Year2020/Day01.fs) |
 | 2020 | [2](https://adventofcode.com/2020/day/2) | [Password Philosophy](https://adventofcode.com/2020/day/2) | [string](tags/string.md) | [Day02.fs](../Year2020/Day02.fs) |

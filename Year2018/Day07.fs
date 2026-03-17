@@ -1,7 +1,7 @@
-/// Year 2018/7 -
+/// Year 2018/7 - The Sum of Its Parts
 /// Link: https://adventofcode.com/2018/day/7
-/// Difficulty:
-/// Tags:
+/// Difficulty: xs
+/// Tags: graph topological-sort difficult-part-2
 /// Remarks:
 module Year2018.Day07
 
