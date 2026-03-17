@@ -1,7 +1,7 @@
 /// Year 2024/5 - Print Queue
 /// Link: https://adventofcode.com/2024/day/5
 /// Difficulty: s
-/// Tags: sort set
+/// Tags: graph topological-sort
 /// Remarks:
 module Year2024.Day05
 
